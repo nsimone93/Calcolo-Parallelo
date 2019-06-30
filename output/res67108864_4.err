@@ -1,0 +1,5 @@
+ATTENTION: 0031-408  4 tasks allocated by Resource Manager, continuing...
+ERROR: 0031-250  task 3: Segmentation fault
+ERROR: 0031-250  task 1: Segmentation fault
+ERROR: 0031-250  task 2: Segmentation fault
+ERROR: 0031-250  task 0: Segmentation fault

@@ -1,0 +1,100 @@
+Gruppo 1 - Bitonic sort su ipercubo
+
+Vogliamo ordinare una sequenza di N elementi, utilizzado P processori (P potenza di 2) in parallelo.
+Sono stati effettuati diversi test per verificare l’andamento temporale dell’ordinamento in funzione del numero di processori utilizzati. Si è deciso di considerare sequenze di lunghezza N = 2^k con k = 5, 6, . . . , 27 e un numero di processori P = 1, 2, 4, 8, 16, 32.
+
+
+Esempio:
+-------
+
+* input32.txt
+
+88785
+333369
+159730
+151319
+323506
+349325
+480901
+291134
+376680
+347429
+359284
+319516
+28559
+262400
+141021
+55567
+409697
+382146
+310630
+126825
+141723
+317469
+363535
+1614
+9383
+306147
+188102
+303684
+151277
+458368
+444181
+57268
+
+* output
+0: 1614
+1: 9383
+2: 28559
+3: 55567
+4: 57268
+5: 88785
+6: 126825
+7: 141021
+8: 141723
+9: 151277
+10: 151319
+11: 159730
+12: 188102
+13: 262400
+14: 291134
+15: 303684
+16: 306147
+17: 310630
+18: 317469
+19: 319516
+20: 323506
+21: 333369
+22: 347429
+23: 349325
+24: 359284
+25: 363535
+26: 376680
+27: 382146
+28: 409697
+29: 444181
+30: 458368
+31: 480901
+
+
+Per eseguire su Power7
+----------------------------
+
+Svuotare il contenuto della cartella ./test se si è interessati ai dati statistici riguardanti ogni processore.
+
+Se si vogliono raccogliere i dati:
+	- Creazione di tutti i Makefile, esecuzione del comando 'make', creazione di tutti i job file e llsubmit (scommentare la riga numero 153 e commentare le righe da 121 a 140):
+	$ python print.py
+	- Raccolta di tutti tempi rilevati
+	$ python max.py
+
+Per una singola esecuzione:
+	$ make
+	$ llsubmit ./job/parallel32_32.job
+
+
+Per eseguite in maniera iterativa su Power7
+----------------------------------------
+
+$ make
+$ poe  ./bin/bitonic32_32.o ./input/input32.txt -procs 32

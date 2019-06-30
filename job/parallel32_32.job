@@ -1,0 +1,9 @@
+#@ initialdir = ~/bin
+#@ input = /dev/null
+#@ output = ../output/res32_32.out
+#@ error = ../output/res32_32.err
+#@ job_type = parallel
+#@ class = medium
+#@ total_tasks = 32
+#@ queue
+./bitonic32_32.o ../input/input32.txt
